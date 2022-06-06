@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using AccountBook.Common;
 using AccountBook.Views;
 
 namespace AccountBook
@@ -21,29 +23,21 @@ namespace AccountBook
     /// </summary>
     public partial class MainWindow : Window
     {
-        private string dateTimes;
-        public string DateTimes
-        {
-            get => dateTimes;
-            set
-            {
-                dateTimes = value;
-            }
-        }
+        private MainWindowViewModel viewModel;
+
         public MainWindow()
         { 
             InitializeComponent();
-            this.DataContext = this;
+            this.DataContext = viewModel;
             this.Loaded += MainWindow_Loaded;
         }
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            var currentYear = DateTime.Today.Year;
-            var currentMonth = DateTime.Today.Month;
-            var currentDay = DateTime.Today.Day;
-            DateTimes = $"{currentYear}-{currentMonth}-{currentDay}";
-
+            //var currentYear = DateTime.Today.Year;
+            //var currentMonth = DateTime.Today.Month;
+            //var currentDay = DateTime.Today.Day;
+            //SelectedDateTime = $"{currentYear}-{currentMonth}-{currentDay}";
         }
 
         private void CategoryManager_Click(object sender, RoutedEventArgs e)
@@ -63,6 +57,16 @@ namespace AccountBook
         private void SearchText_Click(object sender, RoutedEventArgs e)
         {
             // 검색 클릭이벤트
+        }
+
+        private void Clear_Click(object sender, RoutedEventArgs e)
+        {
+            // 초기화 클릭이벤트
+        }
+
+        private void Apply_Click(object sender, RoutedEventArgs e)
+        {
+            // 입력 확인 클릭이벤트
         }
     }
 }

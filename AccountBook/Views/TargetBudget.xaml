@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AccountBook.Views"
         mc:Ignorable="d"
-        Title="TargetBudget" Height="300" Width="400">
+        Title="목표금액 예산 설정" SizeToContent="Height" Width="400">
     <Grid Background="AntiqueWhite">
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -25,11 +25,37 @@
             <StackPanel Orientation="Vertical">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="목표금액 : " FontSize="15"/>
-                    <TextBox Text="목표금액을 작성해주세요." Width="200" Margin="10,0,0,0"/>
+                    <TextBox Name="TargetTextBox" Width="200" Height="22" HorizontalAlignment="Left" Margin="10,0,0,0"/>
+                    <TextBlock Text="목표금액을 작성해주세요." IsHitTestVisible="False" VerticalAlignment="Center" Margin="-198,-5,0,0" HorizontalAlignment="Left">
+                        <TextBlock.Style>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="Visibility" Value="Hidden"/>
+                                <Setter Property="Foreground" Value="Gray"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Text, ElementName=TargetTextBox}" Value="">
+                                        <Setter Property="Visibility" Value="Visible"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
-                    <TextBlock Text="메모 : " FontSize="15"/>
-                    <TextBox Text="메모를 작성해주세요." Width="200" Margin="40,0,0,0"/>
+                    <TextBlock Text="메모 : " FontSize="15" Margin="30,0,0,0"/>
+                    <TextBox Name="MemoTextBox" Width="200" Height="22" HorizontalAlignment="Left" Margin="10,0,0,0"/>
+                    <TextBlock Text="메모를 작성해주세요." IsHitTestVisible="False" VerticalAlignment="Center" Margin="-198,-5,0,0" HorizontalAlignment="Left">
+                        <TextBlock.Style>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="Visibility" Value="Hidden"/>
+                                <Setter Property="Foreground" Value="Gray"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Text, ElementName=MemoTextBox}" Value="">
+                                        <Setter Property="Visibility" Value="Visible"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
                 </StackPanel>
             </StackPanel>
 
