@@ -1,0 +1,42 @@
+﻿<Window x:Class="AccountBook.Views.TargetBudget"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AccountBook.Views"
+        mc:Ignorable="d"
+        Title="TargetBudget" Height="300" Width="400">
+    <Grid Background="AntiqueWhite">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="20,20" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="기간 : " Margin="0,0,5,0" FontSize="15"/>
+                <DatePicker SelectedDate="2022-05-01" Width="110" IsTodayHighlighted="True"/>
+                <TextBlock Text="~" Margin="3,3"/>
+                <DatePicker SelectedDate="2022-05-27" Width="110" IsTodayHighlighted="True"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Margin="20,20" VerticalAlignment="Top" HorizontalAlignment="Center">
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="목표금액 : " FontSize="15"/>
+                    <TextBox Text="목표금액을 작성해주세요." Width="200" Margin="10,0,0,0"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                    <TextBlock Text="메모 : " FontSize="15"/>
+                    <TextBox Text="메모를 작성해주세요." Width="200" Margin="40,0,0,0"/>
+                </StackPanel>
+            </StackPanel>
+
+        </StackPanel>
+        <StackPanel Grid.Row="2">
+            <Button Content="확인" Click="Confirm_Click" Width="50" HorizontalAlignment="Right" Margin="0,5,5,0"/>
+        </StackPanel>
+
+    </Grid>
+</Window>
