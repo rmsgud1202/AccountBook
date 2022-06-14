@@ -19,10 +19,28 @@ namespace AccountBook.Views
     /// </summary>
     public partial class Category : Window
     {
+        public List<ComboBoxItem> items { get; set; }
+
         public Category()
         {
             InitializeComponent();
-            this.DataContext = this;
+
+            InitComboBox();
+        }
+
+        private void InitComboBox()
+        {
+            items = new List<ComboBoxItem>()
+            {
+                new ComboBoxItem() { categoryName = "식비" },
+                new ComboBoxItem() { categoryName = "교통비" },
+                new ComboBoxItem() { categoryName = "문화생활" },
+                new ComboBoxItem() { categoryName = "생필품" },
+                new ComboBoxItem() { categoryName = "의류" },
+                new ComboBoxItem() { categoryName = "미용" },
+            };
+            categoryComboBox.ItemsSource = items;
+            DataContext = this;
         }
 
         private void Confirm_Click(object sender, RoutedEventArgs e)
@@ -36,5 +54,14 @@ namespace AccountBook.Views
             // 편집할 카테고리 Text 저장
             // 추가할 카테고리 Text 저장
         }
+
+        private void CategoryComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Console.WriteLine(categoryComboBox.SelectedValue.ToString());
+        }
+    }
+    public class ComboBoxItem
+    {
+        public string categoryName { get; set; }
     }
 }
