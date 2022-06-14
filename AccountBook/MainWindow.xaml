@@ -87,6 +87,7 @@
                     <Button Content="초기화" Click="Clear_Click" Width="70" Margin="20,20"/>
                     <Button Content="확인" Click="Apply_Click" Width="70" Margin="60,20"/>
                 </StackPanel>
+                <!--2022-06-07 B20311 Test-->
             </Grid>
 
 
