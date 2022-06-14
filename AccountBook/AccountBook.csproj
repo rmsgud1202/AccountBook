@@ -56,7 +56,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Common\MainWindowViewModel.cs" />
-    <Compile Include="ViewModels\AccountBookViewModel.cs" />
     <Compile Include="Views\Category.xaml.cs">
       <DependentUpon>Category.xaml</DependentUpon>
     </Compile>
@@ -110,6 +109,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
