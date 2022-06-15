@@ -39,8 +39,9 @@ namespace AccountBook.Views
                 new ComboBoxItem() { categoryName = "의류" },
                 new ComboBoxItem() { categoryName = "미용" },
             };
+            categoryComboBox.DisplayMemberPath = "categoryName";
             categoryComboBox.ItemsSource = items;
-            DataContext = this;
+            categoryComboBox.SelectedIndex = 0;
         }
 
         private void Confirm_Click(object sender, RoutedEventArgs e)
