@@ -26,7 +26,7 @@
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="목표금액 : " FontSize="15"/>
                     <TextBox Name="TargetTextBox" Width="200" Height="22" HorizontalAlignment="Left" Margin="10,0,0,0"/>
-                    <TextBlock Text="목표금액을 작성해주세요." IsHitTestVisible="False" VerticalAlignment="Center" Margin="-198,-5,0,0" HorizontalAlignment="Left">
+                    <!--<TextBlock Text="목표금액을 작성해주세요." IsHitTestVisible="False" VerticalAlignment="Center" Margin="-198,-5,0,0" HorizontalAlignment="Left">
                         <TextBlock.Style>
                             <Style TargetType="TextBlock">
                                 <Setter Property="Visibility" Value="Hidden"/>
@@ -38,12 +38,12 @@
                                 </Style.Triggers>
                             </Style>
                         </TextBlock.Style>
-                    </TextBlock>
+                    </TextBlock>-->
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
                     <TextBlock Text="메모 : " FontSize="15" Margin="30,0,0,0"/>
                     <TextBox Name="MemoTextBox" Width="200" Height="22" HorizontalAlignment="Left" Margin="10,0,0,0"/>
-                    <TextBlock Text="메모를 작성해주세요." IsHitTestVisible="False" VerticalAlignment="Center" Margin="-198,-5,0,0" HorizontalAlignment="Left">
+                    <!--<TextBlock Text="메모를 작성해주세요." IsHitTestVisible="False" VerticalAlignment="Center" Margin="-198,-5,0,0" HorizontalAlignment="Left">
                         <TextBlock.Style>
                             <Style TargetType="TextBlock">
                                 <Setter Property="Visibility" Value="Hidden"/>
@@ -55,13 +55,13 @@
                                 </Style.Triggers>
                             </Style>
                         </TextBlock.Style>
-                    </TextBlock>
+                    </TextBlock>-->
                 </StackPanel>
             </StackPanel>
 
         </StackPanel>
         <StackPanel Grid.Row="2">
-            <Button Content="확인" Click="Confirm_Click" Width="50" HorizontalAlignment="Right" Margin="0,5,5,0"/>
+            <Button Content="확인" Click="Confirm_Click" Width="50" HorizontalAlignment="Center" Margin="0,5,5,0"/>
         </StackPanel>
 
     </Grid>

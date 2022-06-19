@@ -37,7 +37,7 @@
                             </Style>
                         </TextBlock.Style>
                     </TextBlock>
-                    <Button Content="편집" Margin="10,0,0,0"/>
+                    <!--<Button Content="편집" Margin="10,0,0,0"/>-->
                 </StackPanel>
                 
                 <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
@@ -56,13 +56,13 @@
                             </Style>
                         </TextBlock.Style>
                     </TextBlock>
-                    <Button Content="추가" Margin="10,0,0,0"/>
+                    <!--<Button Content="추가" Margin="10,0,0,0"/>-->
                 </StackPanel>
             </StackPanel>
             
         </StackPanel>
         <StackPanel Grid.Row="2">
-            <Button Content="확인" Click="Confirm_Click" Width="50" HorizontalAlignment="Right" Margin="0,5,5,0"/>
+            <Button Content="확인" Click="Confirm_Click" Width="50" HorizontalAlignment="Center" Margin="0,5,5,0"/>
         </StackPanel>
 
     </Grid>

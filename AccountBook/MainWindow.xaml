@@ -71,13 +71,13 @@
 
                     <StackPanel Orientation="Horizontal" Margin="0,18,0,0">
                         <RadioButton GroupName="RadioType" Content="입금" FontSize="13"/>
-                        <RadioButton GroupName="RadioType" Content="출금" FontSize="13"/>
+                        <RadioButton GroupName="RadioType" Content="출금" IsChecked="True" FontSize="13"/>
                         <RadioButton GroupName="RadioType" Content="자산이동" FontSize="13"/>
                     </StackPanel>
-                    <ComboBox Margin="0,15,0,0"/>
+                    <ComboBox x:Name="categoryComboBox" Margin="0,15,0,0"/>
                     <TextBox Text="5월 통신비" TextAlignment="Left" Height="22" Margin="0,13,0,0"/>
                     <TextBox Text="근형 KT" TextAlignment="Left" Height="22" Margin="0,14,0,0"/>
-                    <ComboBox Margin="0,12,0,0"/>
+                    <ComboBox x:Name="paymentType" Margin="0,12,0,0"/>
                 </StackPanel>
                 
             </Grid>

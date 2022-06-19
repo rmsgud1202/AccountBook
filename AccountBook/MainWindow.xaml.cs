@@ -23,21 +23,31 @@ namespace AccountBook
     /// </summary>
     public partial class MainWindow : Window
     {
-        private MainWindowViewModel viewModel;
+        private MainWindowViewModel mainViewModel;
+
+        public string categoryName { get; set; }
+        public List<MainWindow> items { get; set; }
 
         public MainWindow()
         { 
             InitializeComponent();
-            this.DataContext = viewModel;
+            this.DataContext = mainViewModel;
             this.Loaded += MainWindow_Loaded;
         }
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            //var currentYear = DateTime.Today.Year;
-            //var currentMonth = DateTime.Today.Month;
-            //var currentDay = DateTime.Today.Day;
-            //SelectedDateTime = $"{currentYear}-{currentMonth}-{currentDay}";
+            items = new List<MainWindow>()
+            {
+                new MainWindow() { categoryName = "교통비" },
+                new MainWindow() { categoryName = "문화생활" },
+                new MainWindow() { categoryName = "생필품" },
+                new MainWindow() { categoryName = "의류" },
+                new MainWindow() { categoryName = "미용" },
+            };
+            categoryComboBox.DisplayMemberPath = "categoryName";
+            categoryComboBox.ItemsSource = items;
+            categoryComboBox.SelectedIndex = 0;
         }
 
         private void CategoryManager_Click(object sender, RoutedEventArgs e)
