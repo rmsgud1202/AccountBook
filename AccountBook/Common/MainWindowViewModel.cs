@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AccountBook.Views;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -9,6 +10,13 @@ namespace AccountBook.Common
 {
     public class MainWindowViewModel : INotifyPropertyChanged
     {
+        #region Property
+        //public string inOutTypeName { get; set; }
+        //public string categoryName { get; set; }
+
+        //public List<MainWindowViewModel> items { get; set; }
+        #endregion
+
         #region [Event]
         public event PropertyChangedEventHandler PropertyChanged;
         public void NotifyPropertyChanged(string name)
@@ -27,5 +35,11 @@ namespace AccountBook.Common
                 NotifyPropertyChanged(nameof(SelectedDateTime));
             }
         }
+
+        public void Initialize()
+        {
+            
+        }
+
     }
 }

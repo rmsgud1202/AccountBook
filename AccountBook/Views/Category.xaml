@@ -16,13 +16,7 @@
         <StackPanel Grid.Row="0">
             <StackPanel Orientation="Horizontal" Margin="20,20">
                 <TextBlock Text="기존 카테고리 리스트 : " FontSize="14"/>
-                <ComboBox x:Name="categoryComboBox" ItemsSource="{Binding}" SelectionChanged="CategoryComboBox_SelectionChanged" Width="178" Margin="5,0,0,0">
-                    <ComboBox.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding ComboBoxItem}"/>
-                        </DataTemplate>
-                    </ComboBox.ItemTemplate>
-                </ComboBox>
+                <ComboBox x:Name="categoryComboBox" SelectionChanged="CategoryComboBox_SelectionChanged" Width="178" Margin="5,0,0,0"/>
             </StackPanel>
         </StackPanel>
         <StackPanel Grid.Row="1" Margin="20,20">
@@ -43,7 +37,7 @@
                             </Style>
                         </TextBlock.Style>
                     </TextBlock>
-                    <Button Content="편집" Margin="10,0,0,0"/>
+                    <!--<Button Content="편집" Margin="10,0,0,0"/>-->
                 </StackPanel>
                 
                 <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
@@ -62,13 +56,13 @@
                             </Style>
                         </TextBlock.Style>
                     </TextBlock>
-                    <Button Content="추가" Margin="10,0,0,0"/>
+                    <!--<Button Content="추가" Margin="10,0,0,0"/>-->
                 </StackPanel>
             </StackPanel>
             
         </StackPanel>
         <StackPanel Grid.Row="2">
-            <Button Content="확인" Click="Confirm_Click" Width="50" HorizontalAlignment="Right" Margin="0,5,5,0"/>
+            <Button Content="확인" Click="Confirm_Click" Width="50" HorizontalAlignment="Center" Margin="0,5,5,0"/>
         </StackPanel>
 
     </Grid>
