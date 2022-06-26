@@ -26,18 +26,28 @@ namespace AccountBook
         private MainWindowViewModel mainViewModel;
 
         public string categoryName { get; set; }
-        public List<MainWindow> items { get; set; }
+        public string category2Name { get; set; }
+        public string paymentName { get; set; }
+        public string payment2Name { get; set; }
+        public string ioName { get; set; }
+        public string cardName { get; set; }
+        public List<MainWindow> categoryItems { get; set; }
+        public List<MainWindow> category2Items { get; set; }
+        public List<MainWindow> paymentItems { get; set; }
+        public List<MainWindow> payment2Items { get; set; }
+        public List<MainWindow> ioItems { get; set; }
+        public List<MainWindow> cardItems { get; set; }
 
         public MainWindow()
         { 
-            InitializeComponent();
             this.DataContext = mainViewModel;
             this.Loaded += MainWindow_Loaded;
+            InitializeComponent();
         }
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            items = new List<MainWindow>()
+            categoryItems = new List<MainWindow>()
             {
                 new MainWindow() { categoryName = "교통비" },
                 new MainWindow() { categoryName = "문화생활" },
@@ -46,8 +56,65 @@ namespace AccountBook
                 new MainWindow() { categoryName = "미용" },
             };
             categoryComboBox.DisplayMemberPath = "categoryName";
-            categoryComboBox.ItemsSource = items;
+            categoryComboBox.ItemsSource = categoryItems;
             categoryComboBox.SelectedIndex = 0;
+
+            paymentItems = new List<MainWindow>()
+            {
+                new MainWindow() { paymentName = "현금" },
+                new MainWindow() { paymentName = "카드" },
+                new MainWindow() { paymentName = "선택안함" },
+            };
+            paymentComboBox.DisplayMemberPath = "paymentName";
+            paymentComboBox.ItemsSource = paymentItems;
+            paymentComboBox.SelectedIndex = 0;
+
+            ioItems = new List<MainWindow>()
+            {
+                new MainWindow() { ioName = "입금" },
+                new MainWindow() { ioName = "출금" },
+                new MainWindow() { ioName = "자산이동" },
+            };
+            ioComboBox.DisplayMemberPath = "ioName";
+            ioComboBox.ItemsSource = ioItems;
+            ioComboBox.SelectedIndex = 1;
+
+            payment2Items = new List<MainWindow>()
+            {
+                new MainWindow() { payment2Name = "현금" },
+                new MainWindow() { payment2Name = "카드" },
+                new MainWindow() { payment2Name = "선택안함" },
+            };
+            payment2ComboBox.DisplayMemberPath = "payment2Name";
+            payment2ComboBox.ItemsSource = payment2Items;
+            payment2ComboBox.SelectedIndex = 0;
+
+            category2Items = new List<MainWindow>()
+            {
+                new MainWindow() { category2Name = "교통비" },
+                new MainWindow() { category2Name = "문화생활" },
+                new MainWindow() { category2Name = "생필품" },
+                new MainWindow() { category2Name = "의류" },
+                new MainWindow() { category2Name = "미용" },
+            };
+            category2ComboBox.DisplayMemberPath = "category2Name";
+            category2ComboBox.ItemsSource = category2Items;
+            category2ComboBox.SelectedIndex = 0;
+
+            cardItems = new List<MainWindow>()
+            {
+                new MainWindow() { cardName = "현대카드" },
+                new MainWindow() { cardName = "삼성카드" },
+                new MainWindow() { cardName = "롯데카드" },
+                new MainWindow() { cardName = "카드없음" },
+            };
+            cardTypeComboBox.DisplayMemberPath = "cardName";
+            cardTypeComboBox.ItemsSource = cardItems;
+            cardTypeComboBox.SelectedIndex = 0;
+
+            targetDP.SelectedDate = DateTime.Today;
+            StartDP.SelectedDate = DateTime.Today;
+            EndDP.SelectedDate = DateTime.Today;
         }
 
         private void CategoryManager_Click(object sender, RoutedEventArgs e)
@@ -77,6 +144,11 @@ namespace AccountBook
         private void Apply_Click(object sender, RoutedEventArgs e)
         {
             // 입력 확인 클릭이벤트
+        }
+
+        private void CardTypeComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Console.WriteLine(cardTypeComboBox.SelectedValue.ToString());
         }
     }
 }

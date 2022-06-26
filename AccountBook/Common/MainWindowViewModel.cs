@@ -25,16 +25,16 @@ namespace AccountBook.Common
         }
         #endregion
 
-        private DateTime selectedDateTime = DateTime.Now;
-        public DateTime SelectedDateTime
-        {
-            get => selectedDateTime;
-            set
-            {
-                selectedDateTime = value;
-                NotifyPropertyChanged(nameof(SelectedDateTime));
-            }
-        }
+        //private DateTime selectedDateTime = DateTime.Now;
+        //public DateTime SelectedDateTime
+        //{
+        //    get => selectedDateTime;
+        //    set
+        //    {
+        //        selectedDateTime = value;
+        //        NotifyPropertyChanged(nameof(SelectedDateTime));
+        //    }
+        //}
 
         public void Initialize()
         {
